@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Conversor de moedas</title>
+  </head>
+  <body>
+    <h1>Conversor de moedas</h1>
+    <form method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit">Converter</button>
+    </form>
+    {% if converted_amount %}
+    <p>Taxa de conversão: {{ conversion_rate }}</p>
+    <p>Resultado: {{ converted_amount }}</p>
+    <button onClick="javascript:history.go(-1);">Voltar</button>
+    {% endif %}
+  </body>
+</html>
